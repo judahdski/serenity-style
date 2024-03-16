@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDrawerContainer } from "@angular/material/sidenav";
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,9 +20,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductsHeaderComponent } from './pages/home/components/products-header/products-header.component';
+import { FiltersComponent } from './pages/home/components/filters/filters.component';
+import { ProductBoxComponent } from './pages/home/components/product-box/product-box.component';
 
 @NgModule({
-    declarations: [AppComponent, HeaderComponent, HomeComponent],
+    declarations: [AppComponent, HeaderComponent, HomeComponent, ProductsHeaderComponent, FiltersComponent, ProductBoxComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -39,6 +43,7 @@ import { HomeComponent } from './pages/home/home.component';
         MatBadgeModule,
         MatSnackBarModule,
     ],
+    exports: [MatSidenavModule],
     providers: [],
     bootstrap: [AppComponent],
 })
