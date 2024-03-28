@@ -25,28 +25,31 @@ import { FiltersComponent } from './pages/home/components/filters/filters.compon
 import { ProductBoxComponent } from './pages/home/components/product-box/product-box.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
+import { StoreService } from './services/store.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-    declarations: [AppComponent, HeaderComponent, HomeComponent, ProductsHeaderComponent, FiltersComponent, ProductBoxComponent, CartComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatSidenavModule,
-        MatGridListModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatCardModule,
-        MatIconModule,
-        MatExpansionModule,
-        MatListModule,
-        MatToolbarModule,
-        MatTableModule,
-        MatBadgeModule,
-        MatSnackBarModule,
-    ],
-    exports: [MatSidenavModule],
-    providers: [CartService],
-    bootstrap: [AppComponent],
+	declarations: [AppComponent, HeaderComponent, HomeComponent, ProductsHeaderComponent, FiltersComponent, ProductBoxComponent, CartComponent],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		MatSidenavModule,
+		MatGridListModule,
+		MatMenuModule,
+		MatButtonModule,
+		MatCardModule,
+		MatIconModule,
+		MatExpansionModule,
+		MatListModule,
+		MatToolbarModule,
+		MatTableModule,
+		MatBadgeModule,
+		MatSnackBarModule,
+        HttpClientModule
+	],
+	exports: [MatSidenavModule],
+	providers: [CartService, StoreService],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}
