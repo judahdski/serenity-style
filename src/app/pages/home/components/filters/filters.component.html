@@ -1,10 +1,14 @@
-<mat-expansion-panel *ngIf="categories">
-    <mat-expansion-panel-header>
-        <mat-panel-title> CATEGORIES </mat-panel-title>
-    </mat-expansion-panel-header>
-    <mat-selection-list [multiple]="false">
-        <mat-list-option *ngFor="let category of categories" [value]="category">
-            <button (click)="onShowCategory(category)">{{ category }}</button>
-        </mat-list-option>
-    </mat-selection-list>
-</mat-expansion-panel>
+<div
+	*ngIf="categories"
+	class="w-[200px] px-4">
+	<div class="flex justify-center pt-6 pb-5 font-medium">CATEGORIES</div>
+	<div class="flex flex-col gap-4">
+		<div *ngFor="let category of categories">
+			<button
+				(click)="onShowCategory(category)"
+				class="w-full py-3 rounded shadow hover:bg-slate-100">
+				{{ category.toUpperCase() }}
+			</button>
+		</div>
+	</div>
+</div>
